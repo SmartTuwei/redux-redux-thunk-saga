@@ -31,5 +31,5 @@ export const getTodoList = ()=>{
     }
 }
 export const getInitList = ()=>({
-    type:GET_INIT_LIST
+    type:GET_INIT_LIST,
 })

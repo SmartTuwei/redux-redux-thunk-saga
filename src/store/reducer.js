@@ -1,4 +1,4 @@
-import {CHANG_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM,INIT_LIST_ACTION} from "./action_types";
+import {GET_INIT_LIST,CHANG_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM,INIT_LIST_ACTION} from "./action_types";
 const defaultState = {
     inputValue :"",
     list:[]
@@ -22,6 +22,7 @@ export default (state = defaultState,action) =>{
         newState.list.splice(index,1);
         return newState;
     }
+    //thunk-action 请求
     if(action.type === INIT_LIST_ACTION){
         const newState = JSON.parse(JSON.stringify(state));
         newState.list = action.data;

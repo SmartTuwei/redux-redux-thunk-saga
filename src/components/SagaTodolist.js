@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import 'antd/dist/antd.css';
-import store from "./store/index";
-import {getInputChangeAction,getAddItemAction,getDeleteItemAction,getInitList} from "./store/actionCreators"
+import store from "../store/sagaindex";
+import {getInputChangeAction,getAddItemAction,getDeleteItemAction,getInitList} from "../store/actionCreators"
 import TodoListUi from "./TodoListUi"
 class Todo extends Component{
     constructor(props){
@@ -42,13 +42,9 @@ class Todo extends Component{
         )
     }
     componentDidMount(){
-        // redux-thunk
-        //   const action = getTodoList();
-        //   store.dispatch(action);
         const action = getInitList();
-        console.log(action);
         store.dispatch(action);
-        
+        console.log(action);
     }
 }
 

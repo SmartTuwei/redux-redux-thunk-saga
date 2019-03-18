@@ -8,7 +8,7 @@ function* fetInitList(){
     try{
        var res = yield axios.get("/list.json");
        const acition =  initListAction(res.data);
-       yield put(acition);
+       yield put(acition);//提交到创库中
     }catch(e){
         console.log(e);
     }
